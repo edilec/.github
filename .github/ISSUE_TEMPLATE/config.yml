@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: Report a security issue
-    url: https://edilec.com/security/
-    about: Use Edilec's private security-reporting guidance instead of a public issue.
+    url: https://github.com/edilec/.github/blob/main/SECURITY.md
+    about: Review Edilec's private vulnerability-reporting instructions instead of opening a public issue.
   - name: Company enquiry
     url: https://edilec.com/contact/
     about: Use the company contact page for enquiries that are not public repository issues.
