@@ -33,11 +33,12 @@ conduct** and include the repository, relevant links, a concise description,
 and any context needed to understand the report. Share only information you
 are permitted to disclose.
 
-Reports are reviewed by a maintainer who is not the subject of the concern. If
-the named maintainer is involved, the matter must be escalated to an
-uninvolved Edilec account owner or company lead. Access to a report will be
-limited to the people needed to assess and resolve it, but absolute
-confidentiality cannot be guaranteed where safety or law requires action.
+Reports are reviewed by Edilec. If the named maintainer is involved, state that
+clearly so the report can be routed to an uninvolved company contact where one
+is available. Edilec will not describe a review as independent when no such
+reviewer is available. Access to a report will be limited to the people needed
+to assess and resolve it, but absolute confidentiality cannot be guaranteed
+where safety or law requires action.
 
 ## Response
 
