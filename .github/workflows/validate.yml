@@ -1,0 +1,53 @@
+name: Community health validation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate community defaults
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+          persist-credentials: false
+      - name: Check required documents
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in \
+            README.md \
+            CODE_OF_CONDUCT.md \
+            CONTRIBUTING.md \
+            GOVERNANCE.md \
+            LICENSE \
+            MAINTAINERS.md \
+            SECURITY.md \
+            SUPPORT.md \
+            .github/CODEOWNERS \
+            .github/PULL_REQUEST_TEMPLATE.md; do
+            test -s "$file"
+          done
+      - name: Validate YAML
+        shell: bash
+        run: |
+          set -euo pipefail
+          ruby -e '
+            require "yaml"
+            Dir[".github/**/*.yml"].sort.each do |file|
+              YAML.safe_load(File.read(file), permitted_classes: [], aliases: true)
+              puts "valid #{file}"
+            end
+          '
+      - name: Check changed lines for whitespace errors
+        shell: bash
+        run: git diff --check HEAD^ HEAD
