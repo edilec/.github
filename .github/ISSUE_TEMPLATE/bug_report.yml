@@ -1,0 +1,59 @@
+name: Bug report
+description: Report reproducible incorrect behavior in a public Edilec project.
+title: "bug: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not disclose a suspected vulnerability here. Use the private route in SECURITY.md or the repository Security tab.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Provide the exact release, tag, or commit where the problem occurs.
+      placeholder: v1.2.3 or commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include the operating system, runtime, and relevant dependency versions.
+      placeholder: macOS 15; Node.js 24; package manager and version
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide the smallest safe example and the exact steps needed to observe the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add sanitized logs, screenshots, or related links only when useful.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues for the same problem.
+          required: true
+        - label: I removed credentials, personal data, customer data, and private infrastructure details.
+          required: true
+        - label: This report does not disclose a suspected vulnerability.
+          required: true

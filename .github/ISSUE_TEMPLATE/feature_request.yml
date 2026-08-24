@@ -1,0 +1,41 @@
+name: Feature request
+description: Propose a focused improvement to a public Edilec project.
+title: "feature: "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Describe the concrete user need without assuming a particular solution.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Explain the smallest change that would address the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Include existing features or workarounds you evaluated.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Compatibility and maintenance impact
+      description: Note API, security, dependency, migration, or ongoing support implications.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I reviewed the repository scope and existing issues.
+          required: true
+        - label: This request contains no credentials, private data, or unpublished vulnerability details.
+          required: true
